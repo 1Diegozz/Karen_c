@@ -96,14 +96,16 @@
       }, 100);
     }
   </script>
-  <audio id="bg-music" autoplay loop muted>
-  <source src="musica.mp3" type="audio/mpeg">
+  <!-- Música de fondo -->
+<audio id="bg-music" loop>
+  <source src="musi/cancion.mp3" type="audio/mpeg">
+  Tu navegador no soporta el elemento de audio.
 </audio>
 
 <script>
+  // Cuando el usuario haga clic en cualquier parte de la pantalla
   document.addEventListener("click", () => {
     const music = document.getElementById("bg-music");
-    music.muted = false;
     music.play();
   });
 </script>
