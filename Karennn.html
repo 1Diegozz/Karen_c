@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Feliz Cumpleaños Karen</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      color: white;
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+    body::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-image: url('https://i.pinimg.com/originals/86/42/19/8642191604eab49f3bfb69dee20ebe76.jpg?nii=t');
+      background-size: cover;
+      background-position: center;
+      filter: blur(6px) brightness(0.6);
+      z-index: 0;
+    }
+    h1 {
+      font-size: 3em;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 20px;
+      border-radius: 15px;
+      z-index: 2;
+      position: relative;
+    }
+    button {
+      margin-top: 20px;
+      padding: 15px 30px;
+      font-size: 1.2em;
+      border: none;
+      border-radius: 10px;
+      background-color: pink;
+      color: black;
+      cursor: pointer;
+      transition: 0.3s;
+      z-index: 2;
+      position: relative;
+    }
+    button:hover {
+      background-color: hotpink;
+      color: white;
+    }
+    #mensaje {
+      margin-top: 30px;
+      font-size: 2em;
+      background: rgba(0,0,0,0.6);
+      padding: 15px;
+      border-radius: 15px;
+      display: none;
+      z-index: 2;
+      position: relative;
+      white-space: pre-wrap;
+    }
+    /* Flores */
+    .flor {
+      margin: 20px;
+      width: 100px;
+      opacity: 0;
+      transform: scale(0.1);
+      transition: opacity 2s ease, transform 3s ease;
+      z-index: 2;
+      position: relative;
+    }
+    .flor.mostrar {
+      opacity: 1;
+      transform: scale(1);
+    }
+    .flores-container {
+      display: flex;
+      gap: 40px;
+      justify-content: center;
+      align-items: center;
+    }
+  </style>
+</head>
+<body>
+  <h1>Feliz cumpleaños Karen tamo ❤️</h1>
+  <button onclick="mostrarMensaje()">Abrir</button>
+  <div id="mensaje"></div>
+  
+  <div class="flores-container">
+    <img id="flor1" class="flor" src="https://pngimg.com/uploads/rose/rose_PNG670.png" alt="Flor abriéndose">
+    <img id="flor2" class="flor" src="https://pngimg.com/uploads/rose/rose_PNG670.png" alt="Flor abriéndose">
+  </div>
+
+  <script>
+    const texto = "Feliz cumpleaños reina, espero te la pases super bien bobiss, testaño corazón 🥀";
+
+    function mostrarMensaje() {
+      const mensajeDiv = document.getElementById('mensaje');
+      const flor1 = document.getElementById('flor1');
+      const flor2 = document.getElementById('flor2');
+      mensajeDiv.style.display = 'block';
+      mensajeDiv.textContent = "";
+      let i = 0;
+      const intervalo = setInterval(() => {
+        mensajeDiv.textContent += texto[i];
+        i++;
+        if (i === texto.length) {
+          clearInterval(intervalo);
+          flor1.classList.add('mostrar');
+          flor2.classList.add('mostrar'); // ambas flores se abren
+        }
+      }, 100);
+    }
+  </script>
+</body>
+</html>
