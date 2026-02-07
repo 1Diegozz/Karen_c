@@ -12,20 +12,6 @@
   #flores { display: block; }
     #snoopy { display: none; }
     .mostrar { opacity: 1; transition: opacity 1s; }
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Arial', sans-serif;
-      text-align: center;
-      color: white;
-      height: 100vh;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      position: relative;
-    }
     h1 {
       font-size: 3em;
       background: rgba(0, 0, 0, 0.5);
@@ -34,7 +20,7 @@
       z-index: 2;
       position: relative;
     }
-    button {
+    button  {
       margin-top: 20px;
       padding: 15px 30px;
       font-size: 1.2em;
@@ -66,6 +52,23 @@
   </style>
 </head>
 <body class="not-loaded">
+  <body>
+  <button id="startBtn">Pulsa aquí</button>
+  <button id="openBtn" style="display:none;">Abrir</button>
+
+  <script>
+    const startBtn = document.getElementById("startBtn");
+    const openBtn = document.getElementById("openBtn");
+
+    startBtn.addEventListener("click", () => {
+      // Oculta el botón inicial
+      startBtn.style.display = "none";
+      // Muestra el botón Abrir
+      openBtn.style.display = "inline-block";
+    });
+  </script>
+</body>
+
 <div id="flores">
     <div class="night"></div>
     <div class="flowers">
